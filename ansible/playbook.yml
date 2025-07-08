@@ -24,9 +24,9 @@
 
   roles:
     - TP_INI
-    - Alta_Usuarios_GTGFDF
-    - Sudoers_GTGFDF
-    - Instala-tools_GTGFDF
+    - Alta_Usuarios_Grupo5
+    - Sudoers_Grupo5
+    - Instala-tools_Grupo5
 
   post_tasks:
     - name: "Fin del playbook"
