@@ -25,11 +25,12 @@
     password: "{{ vagrant_password_hash_result.stdout }}"
     state: present
     shell: /bin/bash
-  loop: "{{ R1: Nombre: Mauro     Apellido: Laime
-            R2: Nombre: Adrian    Apellido: Ferrera
-            R3: Nombre: Mauro     Apellido: Laime
-            R4: Nombre: Gomez     Apellido: Emilse
-            R5: Nombre: Carla     Apellido: Lopez 
-            R6: Nombre: Nicolas   Apellido: Margni }}"
+  loop: "{ rol: "R1", nombre: "MAURO", apellido: "LAIME", descripcion_rol: "Líder" }
+      - { rol: "R2", nombre: "ADRIAN", apellido: "FERRERA", descripcion_rol: "LVM" }
+      - { rol: "R3", nombre: "MAURO", apellido: "LAIME", descripcion_rol: "Bash Scripting" }
+      - { rol: "R4", nombre: "EMILSE", apellido: "GOMEZ", descripcion_rol: "Ansible" }
+      - { rol: "R5", nombre: "CARLA", apellido: "LOPEZ", descripcion_rol: "Docker" }
+      - { rol: "R6", nombre: "NICOLAS", apellido: "MARGNI", descripcion_rol: "Verificaciones" }"
+
   loop_control:
     label: "Creando usuario {{ item.rol | lower }}_{{ item.nombre | lower }}"
